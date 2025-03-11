@@ -3,12 +3,12 @@ This project predicts optimized furniture placement based on room dimensions and
 
 
 ## 1. Project Overview :
-The application takes room constraints as input and outputs an optimized furniture placement using deep learning.
-The model is trained in Google Colab and exported as an H5 file for Django integration.
-The Django REST API serves predictions based on the trained model.
+The application takes room constraints as input and outputs an optimized furniture placement using deep learning.\
+The model is trained in Google Colab and exported as an H5 file for Django integration.\
+The Django REST API serves predictions based on the trained model.\
 
 ## 2. How to Run the Application :
-1️⃣ Open Google Colab and Train the Model
+1️⃣ Open Google Colab and Train the Model\
 a) Open Google Colab and upload furniture_placement_model.ipynb.
 b) Run all cells to train the model.
 c) Download the trained model file (furniture_placement_model.h5) after training.
