@@ -3,71 +3,103 @@ This project predicts optimized furniture placement based on room dimensions and
 
 
 ## 1. Project Overview :
-The application takes room constraints as input and outputs an optimized furniture placement using deep learning.\
+The application takes room constraints as input and outputs an optimized furniture placement using deep learning.
 
-The model is trained in Google Colab and exported as an H5 file for Django integration.\
+The model is trained in Google Colab and exported as an H5 file for Django integration.
 
 The Django REST API serves predictions based on the trained model.
 
 ## 2. How to Run the Application :
-1️⃣ Open Google Colab and Train the Model\
+1️⃣ Open Google Colab and Train the Model
 
-a) Open Google Colab and upload furniture_placement_model.ipynb.\
+a) Open Google Colab and upload furniture_placement_model.ipynb.
 
-b) Run all cells to train the model.\
+b) Run all cells to train the model.
 
-c) Download the trained model file (furniture_placement_model.h5) after training.\
+c) Download the trained model file (furniture_placement_model.h5) after training.
 
 d) Move the file to the Django backend folder (furniture_api/) on your local machine.
 
-2️⃣ Set Up Django Backend \
-Step 1:  Open VS Code and Clone the Repository\
+2️⃣ Set Up Django Backend 
 
-a) Open VS Code.\
+Step 1:  Open VS Code and Clone the Repository
 
-b) Open Terminal (View -> Terminal).\
+a) Open VS Code.
 
-c) Clone the project and move into the folder:\
+b) Open Terminal (View -> Terminal).
 
-   git clone https://github.com/sneha3322/Furniture_Arrangement_AI_Model \
+c) Clone the project and move into the folder:
+
+   git clone https://github.com/sneha3322/Furniture_Arrangement_AI_Model 
    
-   cd furniture_api \
+   cd furniture_api 
    
-Step 2: Add Trained Model\
+Step 2: Add Trained Model
 
-a) Train the model in Google Colab (furniture_placement_model.ipynb).\
-b) Download the furniture_placement_model.h5 file.\
-c) Move it inside the furniture_api/ folder.\
-Step 3: Run Django Server\
-a) Apply database migrations:\
-   python manage.py migrate\
-b) Run the Django development server:\
-   python manage.py runserver\
-c) If successful, you will see output like:\
+a) Train the model in Google Colab (furniture_placement_model.ipynb).
+
+b) Download the furniture_placement_model.h5 file.
+
+c) Move it inside the furniture_api/ folder.
+
+Step 3: Run Django Server
+
+a) Apply database migrations:
+
+   python manage.py migrate
+   
+b) Run the Django development server:
+
+   python manage.py runserver
+   
+c) If successful, you will see output like:
+
    http://127.0.0.1:8000/
 
-3️⃣ Test the API in Postman \
-a) Open Postman\
-b) Select POST request\
-c) Enter URL:  http://127.0.0.1:8000/api/predict/ \
-d) Go to Body → Raw → JSON and enter sample input \
-    for ex: \
-    {  \
+3️⃣ Test the API in Postman 
+
+a) Open Postman
+
+b) Select POST request
+
+c) Enter URL:  http://127.0.0.1:8000/api/predict/ 
+
+d) Go to Body → Raw → JSON and enter sample input 
+
+    for ex: 
+    
+    {
+    
     "room": [0, 1, 0, 0, 2, 0, 0, 1, 0, 0,
+    
              0, 1, 0, 0, 2, 0, 0, 1, 0, 0,
+             
              1, 0, 0, 2, 1, 0, 0, 0, 0, 0, 
+             
              1, 0, 0, 2, 1, 0, 0, 0, 0, 0, 
+             
              0, 1, 2, 0, 0, 1, 0, 0, 0, 0, 
+             
              1, 0, 0, 0, 2, 1, 0, 0, 0, 0,  
+             
              0, 1, 2, 0, 0, 1, 0, 0, 0, 0, 
+             
              1, 0, 0, 2, 1, 0, 0, 0, 0, 0]
+             
 }
+
 e) Click send
+
 f) You should receive a response like,
+
    {
+   
     "Optimized_furniture_placement": [
+    
         {
+        
             "x": 3,
+            
             "y": 2,
             "width": 2,
             "height": 2
