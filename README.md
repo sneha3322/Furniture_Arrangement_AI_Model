@@ -19,8 +19,8 @@ Step 1:  Open VS Code and Clone the Repository\
 a) Open VS Code.\
 2) Open Terminal (View -> Terminal).\
 3) Clone the project and move into the folder:\
-   git clone https://github.com/sneha3322/Furniture_Arrangement_AI_Model\
-   cd furniture_api\
+   git clone https://github.com/sneha3322/Furniture_Arrangement_AI_Model \
+   cd furniture_api \
 Step 2: Add Trained Model\
 a) Train the model in Google Colab (furniture_placement_model.ipynb).\
 b) Download the furniture_placement_model.h5 file.\
@@ -31,15 +31,15 @@ a) Apply database migrations:\
 b) Run the Django development server:\
    python manage.py runserver\
 c) If successful, you will see output like:\
-   http://127.0.0.1:8000/\
+   http://127.0.0.1:8000/
 
-3️⃣ Test the API in Postman 
-a) Open Postman
-b) Select POST request
-c) Enter URL:  http://127.0.0.1:8000/api/predict/
-d) Go to Body → Raw → JSON and enter sample input
-    for ex: 
-    {
+3️⃣ Test the API in Postman \
+a) Open Postman\
+b) Select POST request\
+c) Enter URL:  http://127.0.0.1:8000/api/predict/ \
+d) Go to Body → Raw → JSON and enter sample input \
+    for ex: \
+    {  \
     "room": [0, 1, 0, 0, 2, 0, 0, 1, 0, 0,
              0, 1, 0, 0, 2, 0, 0, 1, 0, 0,
              1, 0, 0, 2, 1, 0, 0, 0, 0, 0, 
